@@ -1,0 +1,186 @@
+<!-- sldsValidatorIgnore -->
+<!--
+<template>
+
+    <div class="container">
+        <div class="container69">
+            <div class="column col1">
+                <template for:each={sittingSeats} for:item="seat">
+                    <div key={seat.Id} class="box">
+                        <button class="myButton" onclick={handleBookSeat} value={seat.Id}>{seat.Name}</button>
+                    </div>
+                </template>
+            </div>
+            <div class="column col2">
+                <template for:each={sleeperSeats} for:item="seat">
+                <div key={seat.Id} class="box box2">
+                    <button class="myButton2" onclick={handleBookSeat} value={seat.Id}>{seat.Name}</button>
+                </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="container96">
+            <div class="container96Wrapper">
+                <div class="busDetails">
+                    <div class="bus">
+                        <h1>{busName}</h1>
+                        <h3>{journeyDate}</h3>
+                    </div>
+
+                    <div class="bar-Wrapper">
+                        <ul class="bar">
+                            <li>{stop1}</li>
+                            <li>{stop2}</li>
+                            <li>{stop3}</li>
+                            <li>{stop4}</li>
+                            <li>{stop5}</li>
+                        </ul>
+                    </div>
+
+                    <div class="fareWrapper">
+                        <h5>Sitting Seat Fare/Km : {farePerKmForSittingSeat} /-</h5>
+                        <h5>Sleeper Seat Fare/Km : {farePerKmForSleeperSeat} /-</h5>
+                        <h5>Total Distance : {totalDistance} Kms</h5>
+                        <h3>Total Fare : {TotalFare}/-</h3>
+                    </div>
+                </div>
+
+                <div class="content">
+                    <div class="legend">
+                        <div class="sittingBox flexBox">Sitting</div>
+                        <div class="sleeperBox flexBox">Sleeper</div>
+                    </div>
+                    <div class="cityWrapper">
+                        <h3>{sourceCity}</h3>
+                        <h5>TO</h5>
+                        <h3>{destinationCity}</h3>
+                    </div>
+
+                    <div class="rightWrapper">
+                        <div class="seatWrapper">
+                            <h3>Selected Seats</h3>
+                            <template iterator:seat = {showSelectedSeatsName}>
+                                <div class="seatDetails" key = {seat.value.Id}>
+                                    <h5>{seat.value.Name}</h5>
+                                    <h5>{seat.value.Seat_Type__c}</h5>
+                                </div>
+                            </template>
+                        </div>
+                        <div class="buttonWrapper">
+                            <button onclick={handleClick} class="proceedButton">Proceed</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</template>
+
+-->
+
+<template>
+    <!-- <button onclick={handleViewSeats} class="bookSeat">VIEW SEATS</button> -->
+    
+    <div class="wrapper">
+        <div class="legend">
+          <h5>Select Seats</h5>
+          <div class="bookedLegend">Booked</div>
+          <div class="availableLegend">Available</div>
+          <div class="selectedLegend">Selected</div>
+        </div>
+
+        <div class="seats">
+          <div class="right sittingSeats">
+            <div class="rightOne">
+              <template for:each={rowOne} for:item = 'seat'>
+                <div key={seat.Id}>
+                  <button onclick={handleClickSeat} value={seat.Id} style={seat.Seat_Bg_Color__c} class="commonSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                </div>
+              </template>
+            </div>
+            <div class="rightTwo">
+              <template for:each={rowTwo} for:item = 'seat'>
+                <div key={seat.Id}>
+                  <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <div class="left sittingSeats">
+            <div class="leftOne">
+              <template for:each={rowThree} for:item = 'seat'>
+                <div key={seat.Id}>
+                  <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                </div>
+              </template>
+            </div>
+            <div class="leftTwo">
+              <template for:each={rowFour} for:item = 'seat'>
+                <div key={seat.Id}>
+                  <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <div class="right marginTop sleeperSeats">
+            <div class="rightOne">
+              <template for:each={sleeperRow1} for:item = 'seat'>
+                <div key={seat.Id}>
+                  <button onclick={handleClickSeat} value={seat.Id} style={seat.Seat_Bg_Color__c} class="commonSleeperSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                </div>
+              </template>
+            </div>
+            <div class="rightTwo">
+              <template for:each={sleeperRow2} for:item = 'seat'>
+                <div key={seat.Id}>
+                  <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSleeperSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                </div>
+              </template>
+            </div>
+          </div>          
+
+          <div class="left sleeperSeats">
+            <div class="leftOne">
+              <template for:each={sleeperRow3} for:item = 'seat'>
+                <div key={seat.Id}>
+                  <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSleeperSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                </div>
+              </template>
+            </div>
+            <div class="leftTwo">
+              <template for:each={sleeperRow4} for:item = 'seat'>
+                <div key={seat.Id}>
+                  <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSleeperSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <div class="selectedSeats">
+          <div>
+            <h5 class="seatName-h5">Seats Selected</h5>
+            <div class="flexContainer">
+              <template for:each={showSelectedSeatsName} for:item="seat">
+                <div key={seat.Id}>
+                  <h6 class="seatName-h6">{seat.Seat__r.Name}</h6>
+                </div>
+              </template>
+            </div>
+        </div>
+          <div class="fare">
+            <h5>₹{totalFare}</h5>
+            <h6>Fare Details</h6>
+          </div>
+        </div>
+        <div class="bookSeatWrapper">
+          <button onclick={handleBookSeat} class="bookSeat" disabled={isBookingDisabled}>
+            BOOK SEATS
+          </button>
+        </div>
+    </div>
+    
+</template>

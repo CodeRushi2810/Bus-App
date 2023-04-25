@@ -1,0 +1,254 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+
+
+    <div class="slds-theme_default" style="margin-bottom: 2em;">
+        <div class="slds-p-around_medium">
+            <lightning-progress-indicator type="path" current-step={selectedStep}>
+
+                <lightning-progress-step label="Step1" value="Step1">
+                </lightning-progress-step>
+
+                <lightning-progress-step label="Step2" value="Step2">
+                </lightning-progress-step>
+
+                <lightning-progress-step label="Step3" value="Step3">
+                </lightning-progress-step>
+
+                <lightning-progress-step label="Step4" value="Step4">
+                </lightning-progress-step>
+
+            </lightning-progress-indicator>
+        </div>
+    </div>
+
+
+    <!-- <div class="container">
+        <div class="leftWrapper">
+            <div class="header">
+                <div class="dataLeft">
+                    <h5>{sourceCity} To {destinationCity}</h5>
+                    <h3>{busName}</h3>
+                    <h6>{busType}</h6>
+                </div>
+                <div class="dataRight">
+                    <h6 if:true={showSeats}>{totalSelectedSeatsCount} Seats Selected</h6>
+                    <h6 if:true={showSeat}>{totalSelectedSeatsCount} Seat Selected</h6>
+                    <div class="flexContainer">
+                        <template  for:each={seatDetails} for:item="seat">
+                            <div key={seat.id}>
+                                <h3 class="seatNameDisplay">{seat.Seat__r.Name},</h3>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </div>
+            <div class="ratings">
+                <h5>4.6/5</h5>
+                <h6>14 Ratings</h6>
+            </div>
+            <div class="journeyDate">
+                <div class="start">
+                        <div class="time">{pickupTime}</div>
+                        <div class="date">{pickupDate}</div>
+                    <div>
+                        <div class="city">{pickupPointCity}</div>
+                    </div>
+                    <div class="street">
+                        {pickupPointAddress}
+                    </div>
+                </div>
+
+                <div class="duration">
+                        <div class="points">
+                            <div>O</div>
+                            <div class="dots">----------</div>
+                        </div>
+                        <div class="hours">
+                            {journeyDuration}
+                        </div>
+                </div>
+
+                <div class="end">
+                        <div class="time">{dropTime}</div>
+                        <div class="date">{dropDate}</div>
+                    <div>
+                        <div class="city">{dropPointCity}</div>
+                    </div>
+                    <div class="street">
+                        {dropPointAddress}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttonBox">
+                <button class="travelerButton" onclick={handelEnterTravellerDetails}>Enter Traveller Details</button>
+            </div>
+            <template for:each={formArray} for:item="form" for:index="index">
+                <div key={form.id} class="margin-top">
+                    <lightning-card title={form.seatnumber}>
+
+                        <lightning-input class="margin-left-right"
+                                            label="Name" value={form.name} type="text"
+                                            pattern="[a-zA-Z ]+"
+                                            onchange={handleChange} 
+                                            data-index={index} 
+                                            maxlength="255" 
+                                            required message-when-value-missing="Please fill the required field">
+                        </lightning-input>
+
+                        <lightning-input  class="margin-left-right"
+                                            label="Age" value={form.age} type="number" 
+                                            onchange={handleChange} 
+                                            data-index={index} min="5" max="100" 
+                                            message-when-range-overflow="Age must be less than or equal to 100" 
+                                            message-when-range-underflow="Age must be greater than or equal to 5" 
+                                            required message-when-value-missing="Please fill the required field">
+                        </lightning-input>
+
+                        <lightning-combobox class="margin-left-right"
+                                            label="Gender" value={form.gender} 
+                                            options={genderOptions} 
+                                            onchange={handleChange} 
+                                            data-index={index} 
+                                            required message-when-value-missing="Please fill the required field">
+                        </lightning-combobox>
+
+                    </lightning-card>
+                </div>
+            </template>
+        </div>
+        <div class="rightWrapper">
+            <div class="confirmBookContainer">
+                <div class="amountBox">
+                    <div class="totalAmount">
+                        <div class="title">Total Base Price</div>
+                        <div class="price">₹ {totalFare}</div>
+                    </div>
+
+                    <div class="totalAmount">
+                        <div class="title">Sitting x {sittingSeatsCount}</div>
+                        <div class="price">₹ {sittingFare}</div>
+                    </div>
+                    <div class="totalAmount">
+                        <div class="title">Sleeper x {sleeperSeatsCount}</div>
+                        <div class="price">₹ {sleeperFare}</div>
+                    </div>
+
+                    <div class="buttonBox">
+                        <button class="bookButton" onclick={handleSaveAll} disabled={isbutton2Disabled}>CONTINUE TO BOOK NOW</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="displayResults">
+        <div class="dflex">
+          <div class="resultLeft">
+            <div class="header">
+              <h4 class="busName">{busName}</h4>
+              <h5 class="margin1 ratings ratingStyle">{busRating}/5</h5>
+              <h6 class="margin1 ratings">{busTotalRating} Ratings</h6>
+  
+              <h4 class="margin-auto ratings">{busNumber}</h4>
+            </div>
+            <div class="details">
+              <h6>{busType}</h6>
+            </div>
+
+            <div class="location">
+                <div class="journeyTime">
+                  <h6>{pickupPointAddress}, {pickupPointCity}</h6>
+                </div>
+                <div class="journeyTime">
+                  <h6>{dropPointAddress}, {dropPointCity}</h6>
+                </div>
+              </div>
+
+            <div class="time">
+              <div class="journeyTime">
+                <h6>{pickupDate}, {pickupTime}</h6>
+              </div>
+              <h6 class="margin3">----{journeyDuration}----</h6>
+              <div class="journeyTime">
+                <h6>{dropDate}, {dropTime}</h6>
+              </div>
+            </div>
+          </div>
+  
+          <div class="resultRight">
+            <div class="fareWrapper">
+                <h5>selected seats</h5>
+                <div style="display: flex;  align-items: flex-end;">
+                    <template  for:each={seatDetails} for:item="seat">
+                        <div key={seat.id}>
+                            <h4 class="displaySeat">{seat.Seat__r.Name}</h4>
+                        </div>
+                    </template>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <template for:each={formArray} for:item="form" for:index="index">
+        <div key={form.id} class="margin-top">
+            <lightning-card title={form.seatnumber}>
+
+                <lightning-input class="margin-left-right"
+                                    label="Name" value={form.name} type="text"
+                                    pattern="[a-zA-Z ]+"
+                                    onchange={handleChange} 
+                                    data-index={index} 
+                                    maxlength="255" 
+                                    required message-when-value-missing="Please fill the required field">
+                </lightning-input>
+
+                <lightning-input  class="margin-left-right"
+                                    label="Age" value={form.age} type="number" 
+                                    onchange={handleChange} 
+                                    data-index={index} min="5" max="100" 
+                                    message-when-range-overflow="Age must be less than or equal to 100" 
+                                    message-when-range-underflow="Age must be greater than or equal to 5" 
+                                    required message-when-value-missing="Please fill the required field">
+                </lightning-input>
+
+                <lightning-combobox class="margin-left-right"
+                                    label="Gender" value={form.gender} 
+                                    options={genderOptions} 
+                                    onchange={handleChange} 
+                                    data-index={index} 
+                                    required message-when-value-missing="Please fill the required field">
+                </lightning-combobox>
+
+            </lightning-card>
+        </div>
+    </template>
+
+    <div class="rightWrapper">
+        <div class="confirmBookContainer">
+            <div class="amountBox">
+                <div class="totalAmount">
+                    <div class="title">Total Base Price</div>
+                    <div class="price">₹ {totalFare}</div>
+                </div>
+
+                <div class="totalAmount">
+                    <div class="title">Sitting x {sittingSeatsCount}</div>
+                    <div class="price">₹ {sittingFare}</div>
+                </div>
+                <div class="totalAmount">
+                    <div class="title">Sleeper x {sleeperSeatsCount}</div>
+                    <div class="price">₹ {sleeperFare}</div>
+                </div>
+
+                <div class="buttonBox">
+                    <button class="bookButton" onclick={handleSaveAll}>PROCEED</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

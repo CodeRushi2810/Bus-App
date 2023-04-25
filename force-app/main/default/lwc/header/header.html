@@ -1,0 +1,66 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="container">
+
+        <div class="searchBar">
+
+            <lightning-input type="search" placeholder="Source City" value={cityOne} onchange={handleChangeCityOne}></lightning-input>
+
+            <lightning-input type="search" placeholder="Destination City" value={cityTwo} onchange={handleChangeCityTwo}></lightning-input>
+
+            <lightning-input type="date" placeholder="Journey Date" onchange={handleChangeDate}></lightning-input>
+
+            <div class="button-wrapper">
+                <lightning-button class="btn" label="Search" variant="brand" onclick={handleSubmit}></lightning-button>
+            </div>
+
+        </div>
+
+        <template iterator:bus={data}>
+                    <div class="wrapper" key={bus.value.Id}>
+                        <div class="card-wrapper">
+                            <div class="column1 common">
+                                <h1>{bus.value.Name}</h1>
+                                <h1>Hello</h1>
+                                <h4 class="marginTop">A/C Sleeper(2+1)</h4>
+                                <div class="icon-wrapper">
+                                    
+                                    <lightning-icon  class="iconPad" icon-name="utility:groups" size="small"></lightning-icon>
+                                    <lightning-icon  class="iconPad" icon-name="utility:global_constant" size="small"></lightning-icon>
+                                    <lightning-icon class="iconPad" icon-name="utility:key" size="small"></lightning-icon>
+                                    <lightning-icon class="iconPad" icon-name="utility:alert" size="small"></lightning-icon>
+                                    <h4>Change Travel Date</h4>                                
+                                </div>
+                            </div>
+
+                            <div class="column2 common">
+                                <h4 class="time">{bus.value.Pickup_Time__c}</h4>
+                                <h4>{bus.value.From__c}</h4>
+                                <h4>Live Tracking</h4>
+                            </div>
+
+                            <div class="column3 common">
+                            <h4>{bus.value.Journey_Duration__c}</h4>
+                            </div>
+
+                            <div class="column4 common">
+                                <h4 class="time">{bus.value.Drop_Time__c}</h4>
+                                <h4>{bus.value.To__c}</h4>
+                                <h4>{bus.value.Journey_Date__c}</h4>
+                            </div>
+
+                            <div class="common column5">
+                                <div class="left">
+                                    <h4>INR {bus.value.Fair__c}</h4>
+                                    <h4>{bus.value.Available_Seats__c} Seats available</h4>
+                                </div>
+                                <div class="right">
+                                    <button value={bus.value.Id} onclick={handleViewSeats}>VIEW SEATS</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>                              
+        </template>
+    </div>
+</template>

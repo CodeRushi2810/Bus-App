@@ -1,0 +1,171 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+}
+
+
+h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: black;
+}
+h2{
+    font-size: 2rem;
+    font-weight: 500;
+    color: black;
+}
+h5{
+    margin-top: 1em;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #ababab;
+}
+.h5{
+    margin-top: 0.5em;
+    font-size: 0.9rem;
+    font-weight: 400;
+    max-width: 350px;
+    color: black;
+    text-align: center;
+}
+.content h1{
+    font-weight: 600;
+}
+.content h1::after{
+    content: '';
+    display: block;
+    height: 0.2em;
+    width: 3em;
+    border-radius: 15px;
+    background-color: black;
+    transition: width 0.5s;
+}
+.content h1:hover::after{
+    width: 100%;
+}
+.content h5{
+    font-size: 0.9rem;
+    text-align: left;
+    color: black;
+}
+.banner-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:white;
+    margin-top: 3em;
+}
+.banner{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.content{
+    width: 100%;
+    margin-top: 2em;
+    padding: 0 2em 0 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cards{
+    margin-top: 2.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4em;
+    transition: background 0.5s, transform 0.5s;
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+
+img{
+    height: 300px;
+    width: 100%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.button{
+    padding: 0.5em 1.5em;
+    background-color:#4043e1;
+    color: white;
+    border-radius: 25px;
+    border: none;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+@media(min-width : 750px){
+
+    h1{
+    font-size: 3rem;
+    font-weight: 600;
+    color: black;
+    }
+    h2{
+        font-size: 2rem;
+        font-weight: 500;
+        color: black;
+    }
+    h5{
+        margin-top: 1em;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #ababab;
+    }
+    .h5{
+        margin-top: 0.5em;
+        font-size: 1rem;
+        font-weight: 400;
+        max-width: 350px;
+        color: black;
+        text-align: center;
+    }
+
+    .cards{
+        margin-top: 2.5em;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .content{
+        width: 80%;
+        margin-top: 2em;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .card{
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        border-top-right-radius: 15px;
+        background: white;
+        border-top-left-radius: 15px;
+        border-radius: 15px;
+        margin-bottom: 4em;
+        transition: background 0.5s, transform 0.5s;
+    }
+}

@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+
+    --fw-h1: 800;
+    --fw-h2: 700;
+    --fw-h3: 600;
+    --fw-h4: 500;
+    --fw-h5: 400;
+    --fw-h6: 300;
+    --fw-p: 500;
+
+    --fs-h1: 3.5rem;
+    --fs-h2: 2.5rem;
+    --fs-h3: 2rem;
+    --fs-h4: 1.5rem;
+    --fs-h5: 1rem;
+    --fs-h6: 0.7rem;
+    --fs-p: 0.5rem;
+
+    --accent-clr: #fefefe;
+    --secondary-accent-clr: #4c4c4c;
+    --secondary-accent-clr-light: #8a8a8a;
+    --primary-clr: #05060e;
+    --secondary-clr-light: #000000;
+}
+h1{
+    font-weight: var(--fw-h1);
+    font-size: var(--fs-h1);
+}
+h2{
+    font-weight: var(--fw-h2);
+    font-size: var(--fs-h2);
+}
+h3{
+    font-weight: var(--fw-h3);
+    font-size: var(--fs-h3);
+}
+h4{
+    font-weight: var(--fw-h4);
+    font-size: var(--fs-h4);
+}
+h5{
+    font-weight: var(--fw-h5);
+    font-size: var(--fs-h5);
+}
+h6{
+    font-weight: var(--fw-h6);
+    font-size: var(--fs-h6);
+}
+p{
+    font-weight: var(--fw-p);
+    font-size: var(--fs-p);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 0;
+    margin-bottom: 1em;
+}
+.header h4{
+    color: #d51313;
+}
+.header h5{
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-h3);
+}
+.boxWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5em 0;
+    margin-bottom: 1em;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box h4{
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-h4);
+}
+.box h5{
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-h3);
+}
+.viewMoreButtonWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.viewMoreButton{
+    width: 100%;
+    padding: 0.4em 0.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: var(--fs-h5);
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    color: var(--accent-clr);
+}
+
+.flexBox{
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.title{
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-h3);
+}
+.dots{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.city{
+    color: var(--secondary-accent-clr-light);
+}
+.time{
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-h3);
+    color: var(--secondary-accent-clr);
+} 
+.cancelButtonWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.cancelButton{
+    width: 100%;
+    padding: 0.4em 0.5em;
+    border: none;
+    border-radius: 5px;
+    font-size: var(--fs-h5);
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    color: var(--accent-clr);
+}
+.busDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.busDetails h4{
+    font-weight: var(--fw-h2);
+}
+.ratings{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ratings h5{
+    font-weight: var(--fw-h5);
+    font-size: 1rem;
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    padding: 0.3em 0.7em;
+    border: none;
+    border-radius: 5px;
+    color: var(--accent-clr);
+}
+.cancellation{
+    border-top: 1px solid var(--secondary-accent-clr-light);
+    padding-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+.cancelTime h5{
+    margin-bottom: 1em;
+}
+.penalty h5{
+    margin-bottom: 1em;
+}
+.penalty h6{
+    margin-left: auto;
+}
+
+.container{
+    position: relative;
+}
+.confirmCancelBox{
+    position: absolute;
+    height: 55%;
+    left: 0%;
+    width: 100%;
+    top: 0%;
+    background-color: var(--accent-clr);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.popupWrapper{
+    padding: 1.5em;
+    width: 100%;
+}
+.popupWrapper h3{
+    color: black;
+}
+.buttonWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4em 2em 4em 0;
+}
+.confirmButton{
+    padding: 0.5em 3em;
+    border-radius: 5px;
+    border: none;
+    background: linear-gradient(93deg, #db5d47, #a81900);
+    color: white;
+    font-weight: var(--fw-h3);
+    font-size: var(--fs-h5);
+}
+.closeButton{
+    margin-left: 2em;
+    padding: 0.5em 3em;
+    border-radius: 5px;
+    border: none;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    font-weight: var(--fw-h3);
+    font-size: var(--fs-h5);
+}
+
+@media(min-width : 750px){
+
+    .confirmCancelBox{
+        height: 81%;
+        width: 100%;
+        background-color: var(--accent-clr);
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .popupWrapper{
+        padding: 1.5em;
+        width: 50%;
+    }
+    .confirmButton{
+        padding: 0.5em 4.5em;
+    }
+    .closeButton{
+        padding: 0.5em 4.5em;
+    }
+    .viewMoreButton{
+        width: 50%;
+        padding: 0.4em 0.5em;
+        border: none;
+        border-radius: 5px;
+        font-size: var(--fs-h5);
+        background: linear-gradient(93deg, #53b2fe, #065af3);
+        color: var(--accent-clr);
+    }
+    .cancelButton{
+        width: 50%;
+        padding: 0.4em 0.5em;
+        border: none;
+        border-radius: 5px;
+        font-size: var(--fs-h5);
+        background: linear-gradient(93deg, #53b2fe, #065af3);
+        color: var(--accent-clr);
+    }
+}

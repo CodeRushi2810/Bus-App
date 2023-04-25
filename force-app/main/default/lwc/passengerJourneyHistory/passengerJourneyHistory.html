@@ -1,0 +1,35 @@
+<template>
+
+    <div class="container">
+        <div if:false={isThereAnyHistory}>
+            <h3>No Journey History Available</h3>
+        </div>
+        <div class="containerWrapper" if:true={isThereAnyHistory}>
+            
+            <div class="titleWrapper" if:true={upcomingJourneyAvailable}>
+                <h3>Upcoming Journeys</h3>
+            </div>
+            <div class="journeyWrapper" if:true={upcomingJourneyAvailable}>
+                <template for:each={updatedUpcomingJourney} for:item='journey'>
+                    <div key={journey.Id} class="journey">
+                        <div class="journeyDetails">
+                            <c-upcoming-journey-data record={journey} ></c-upcoming-journey-data>
+                        </div>
+                    </div>
+                </template>
+            </div>
+
+            <div class="titleWrapper" if:true={pastJourneyAvailable}>
+                <h3>Past Journeys</h3>
+            </div>
+            <div class="journeyWrapper" if:true={pastJourneyAvailable}>
+                <template for:each={updatedPastJourney} for:item='journey'>
+                    <div key={journey.Id} class="journey">
+                        <c-past-journey-data record={journey} ></c-past-journey-data>
+                    </div>
+                </template>
+            </div>
+
+        </div>
+    </div>
+</template>

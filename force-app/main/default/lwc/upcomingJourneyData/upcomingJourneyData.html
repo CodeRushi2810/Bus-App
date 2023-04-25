@@ -1,0 +1,102 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+
+<template>
+    <div class="container">
+        <div class="busDetails">
+            <div>
+                <h4>{record.Bus_Id__r.Name}</h4>
+                <h5>Volvo</h5>
+            </div>
+            <div class="ratings">
+                <h5>4.4/5</h5>
+            </div>
+        </div>
+        <div class="header">
+            <h4>{record.Source_City__c}</h4>
+            <h5>TO</h5>
+            <h4>{record.Destination_City__c}</h4>
+        </div>
+        <div class="boxWrapper">
+            <div class="box">
+                <h4>Journey Date</h4>
+                <h5>{record.Journey_Date__c}</h5>
+            </div>
+            <div class="box">
+                <h4>Total Fare</h4>
+                <h5>{record.Total_Fare__c} /-</h5>
+            </div>
+            <div class="box">
+                <h4>Booking Date</h4>
+                <h5>{record.Booking_Date__c}</h5>
+            </div>
+        </div>
+        <div class="viewMoreButtonWrapper">
+            <button value={record.Id} onclick={handleShowMore} class="viewMoreButton">View More</button>
+        </div>
+        <div class="moreDetails" if:true={showExtraDetails}>
+            <div class="boxWrapper2">
+                <div class="flexBox">
+                    <div>
+                        <h4 class="title">Pick Up Point</h4>
+                    </div>
+                    <div>
+                        <h4 class="title">Drop Off Point</h4>
+                    </div>
+                </div>
+                <div class="flexBox">
+                    <div>
+                        <h5>{record.Pickup_Point__r.Name},</h5>
+                        <h5 class="city">{record.Source_City__c}</h5>
+                        <h5 class="time">{record.Start_Time__c}</h5>
+                    </div>
+                    <div class="dots">
+                        <div>O</div>
+                        <div>------------</div>
+                    </div>
+                    <div>
+                        <h5>{record.Drop_Point__r.Name},</h5>
+                        <h5 class="city">{record.Destination_City__c}</h5>
+                        <h5 class="time">{record.End_Time__c}</h5>
+                    </div>
+                </div>
+                <div class="cancellation">
+                    <div class="cancelTime">
+                    <h5>Cancellation Time</h5>
+                    <h6>More than 48 hrs before travel</h6>
+                    <h6>24 to 48 hr(s) before travel</h6>
+                    <h6>6 to 24 hr(s) before travel</h6>
+                    <h6>0 to 6 hr(s) before travel</h6>
+                    </div>
+                    <div class="penalty">
+                    <h5>Penalty %</h5>
+                    <h6>15 %</h6>
+                    <h6>50 %</h6>
+                    <h6>60 %</h6>
+                    <h6>100 %</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cancelButtonWrapper">
+                <button class="cancelButton" onclick={handleCancelBooking}>Cancel Booking</button>
+            </div>
+        </div>
+    </div>
+
+    <div if:true={showCancelPopupBox} class="confirmCancelBox">
+        <div class="popupWrapper">
+            <div>
+                <h3>Confirming will cancel your tickets!!!</h3>
+            </div>
+
+            <div>
+                <h2>Are you sure?</h2>
+            </div>
+            <div class="buttonWrapper">
+                <button onclick={cancelBooking} class="confirmButton">Confirm</button>
+                <button onclick={closePopup} class="closeButton">Close</button>
+            </div>
+        </div>
+    </div>
+</template>

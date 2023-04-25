@@ -1,0 +1,17 @@
+<template>
+    <div style="background:white; padding:10px">
+        <div class="textheader">
+            Below image is rendered as a div background. <br/> 
+            with a text message overlay.
+        </div>
+        <div class="backgroundImg" style={getBackgroundImage} >
+            <div class="textoverlay">
+                Hi Traveller. <br/>
+                Welcome To Unicorn Bus
+            </div>
+        </div>
+
+        <div class="textheader">Below image is rendered using the html image tag.</div>
+        <img width="500px" src={imageUrl} />
+    </div>
+</template>

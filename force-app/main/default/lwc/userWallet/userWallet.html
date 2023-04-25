@@ -1,0 +1,36 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="container">
+        <div class="userProfile">
+            <div class="userImage"></div>
+            <div class="userName">
+                <h3>{userName}</h3>
+            </div>
+        </div>
+        <div class="header">
+            <h5>Total Balance</h5>
+            <h1>₹ {userBalance}</h1>
+        </div>
+        <div class="addMoney">
+            <div class="addMoneyWrapper">
+                <div class="screen">
+                    <input  class="inputField"
+                            value={amountToBeAdded} type="number" 
+                            onchange={handleInputAmount} 
+                            min="1000" max="10000" 
+                            message-when-range-underflow="Minimun Limit 1,000/-" 
+                            message-when-range-overflow="Maximum Limit 1,00,000/-" 
+                            message-when-value-missing="Please fill the Amount">
+                </div>
+                <div class="buttonWrapper">
+                    <button onclick={handleDecreseAmount}>-</button>
+                    <button onclick={handleAddMoney}>
+                        Add Money
+                    </button>
+                    <button onclick={handleInceaseAmount}>+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

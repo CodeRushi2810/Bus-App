@@ -1,0 +1,246 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!--
+<template>
+
+    <div class="container">
+        <div class="searchBar-wrapper">
+            <div class="searchBar">
+                <div class="box1 box">
+                    <h5>Choose Source City</h5>
+                    <input placeholder="Source City" value={cityOne} onchange={handleChangeCityOne} type="text">
+                     <lightning-combobox
+                        name="cityNames"
+                        value={selectedCity}
+                        placeholder="Select a Location"
+                        options={cityOptions}
+                        onchange={handleSelectSourceCity}
+                        >
+                    </lightning-combobox> 
+
+                </div>
+                <div class="swap box">
+                    <lightning-icon onclick={handleSwap} class="iconPad swapButton" icon-name="utility:product_transfer" size="medium"></lightning-icon>
+                </div>
+
+                <div class="box2 box">
+                    <h5>Choose Destination City</h5>
+                    <input placeholder="Destination City" value={cityTwo} onchange={handleChangeCityTwo} type="text">
+                     <lightning-combobox
+                        name="cityNames"
+                        value={selectedCity}
+                        placeholder="Select a Location"
+                        options={cityOptions}
+                        onchange={handleSelectDestinationCity}
+                        >
+                    </lightning-combobox> 
+                </div>
+                
+                <div class="box3 box">
+                    <h5>Choose Journey Date</h5>
+                    <input type="date" placeholder="dd-mm-yyyy" min={today} onchange={handleChangeDate}>
+                </div>
+                <div class="box4 box">
+                    <button class="submitButton" onclick={handleSubmit}>Search</button>
+                </div>
+            </div>
+        </div>
+        
+        <h1 class="results" if:true={resultsVisiblity}>We found {totalResults} results!!!</h1>
+        <template iterator:bus={data}>
+            <div class="wrapper" key={bus.value.Id}>
+                <div class="master-wrapper">
+                    <div class="card-wrapper">
+
+                        <div class="column1 common">
+                            <h1>{bus.value.Name}</h1>
+                            <h4 class="marginTop">{bus.value.Type__c}</h4>
+                            <div class="icon-wrapper">
+                                <lightning-icon  class="iconPad" icon-name="utility:groups" size="small"></lightning-icon>
+                                <lightning-icon  class="iconPad" icon-name="utility:global_constant" size="small"></lightning-icon>
+                                <lightning-icon class="iconPad" icon-name="utility:key" size="small"></lightning-icon>
+                                <lightning-icon class="iconPad" icon-name="utility:alert" size="small"></lightning-icon>
+                            </div>
+                        </div>
+
+                        <div class="column2 common">
+                            <h4 class="time">Pick Up Time</h4>
+                            <h4>{bus.value.Source_City__c}</h4>
+                            <h4>Live Tracking</h4>
+                        </div>
+
+                        <div class="column3 common">
+                        <h4>Journey Duration</h4>
+                        </div>
+
+                        <div class="column4 common">
+                            <h4 class="time">Drop Time</h4>
+                            <h4>{bus.value.Destination_City__c}</h4>
+                            <h4>{bus.value.Journey_Date__c}</h4>
+                        </div>
+
+                        <div class="common column5">
+                            <div class="left">
+                                <h4>Sleeper : {bus.value.Number_Of_Sitting_Seats__c}</h4>
+                                <h4>Sitting : {bus.value.Number_Of_Sleeper_Seat__c}</h4>
+                            </div>
+                            <div class="right">
+                                <button value={bus.value.Id} onclick={handleViewSeats}>VIEW BUS</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>    
+            </div>                              
+        </template>
+    </div>
+</template>
+-->
+
+<template>
+    <div class="searchContainer">  
+        <div class="containerWrapper">
+
+            <div class="cityWrapper">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label labelStyle">SOURCE CITY</label>
+                    <div class="slds-form-element__control">
+                      <input type="text" placeholder="FROM" class="slds-input inputCity" onchange={handleInputCityOne} value={sourceCity} />
+                    </div>
+                </div>
+            </div>
+            <div class="swapButtonWrapper">
+                <lightning-icon onclick={handleSwap} class="iconPad swapButton" icon-name="utility:product_transfer" size="medium"></lightning-icon>
+            </div>
+            
+            <div class="cityWrapper">
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label labelStyle">DESTINATION CITY</label>
+                    <div class="slds-form-element__control">
+                      <input type="text" placeholder="TO" class="slds-input inputCity" onchange={handleInputCityTwo} value={destinationCity}/>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="slds-form-element">
+                    <label class="slds-form-element__label labelStyle">JOURNEY DATE</label>
+                    <div class="slds-form-element__control">
+                      <input type="date" placeholder="Journey Date" class="slds-input inputCity" onchange={handleChangeJourneyDate} />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="myButton">
+            <button onclick={handleSearchBuses}>SEARCH</button>
+        </div>
+    </div>
+<!-- 
+  <div class="container">
+    <div class="primary">
+      <div class="searchbar">
+        <div class="cityWrapper">
+          <lightning-input class="city" type="text" placeholder="Source City" onchange={handleSearchSourceCity} value={sourceCity}></lightning-input>
+          <div if:true={showTemplate1} class="recommedationBoxWrapper">
+            <ul>
+                <template for:each={searchResults1} for:item="result">
+                    <div key={result.Id} class="recommedationBox">
+                        <button onclick={handleInputCityOne} value={result.Name}>{result.Name}</button>
+                    </div>
+                </template>
+            </ul>
+          </div>
+        </div>
+        <button class="swap" onclick={handleSwap}>Swap</button>
+        <div class="cityWrapper">
+            <lightning-input class="city" type="text" placeholder="Destination City" onchange={handleSearchDestinationCity} value={destinationCity}></lightning-input>
+            <div if:true={showTemplate2} class="recommedationBoxWrapper">
+                <ul>
+                    <template for:each={searchResults2} for:item="result">
+                        <div key={result.Id} class="recommedationBox">
+                            <button onclick={handleInputCityTwo} value={result.Name}>{result.Name}</button>
+                        </div>
+                    </template>
+                </ul>
+            </div>
+        </div> 
+      </div>
+
+    </div>
+
+    <div class="secondary">
+      <h4>Available dates</h4>
+      <div>
+        <button onclick={handleSetJourneyDateToToday} class={todayDateClass}>Today</button>
+        <button onclick={handleSetJourneyDateToTomorrow} class={tomorrowDateClass}>Tomorrow</button>
+        <input onchange={handleChangeJourneyDate} class={customDateClass} type="date" />
+      </div>
+    </div>
+    <div class="searchButtonWrapper">
+      <button class="searchButton" onclick={handleSearchBuses}>Search</button>
+    </div>
+  </div>
+ -->
+  <div if:true={dataVisibility} class="totalResults">
+      <h5>We found {results} results!</h5>
+      <button class="showFiltersButton" onclick={showFilters}>Show Filters</button>
+  </div>
+
+    <div class="myWrapper">
+        
+        <div class={resultsClass}>
+            <template if:true={resultsVisibility} for:each={updatedRecordsWithTime} for:item=record>
+                <div key={record.id} class="resultsWrapper">
+                <c-selected-bus record={record} seatsleft = {record.Seats_Left__c} sourcecity={sourceCity} destinationcity={destinationCity}></c-selected-bus>
+                </div>
+            </template>
+        </div>
+
+        <div class={filterClass}>
+            <div class="filterWrapper">
+                <div class="filterHeader">
+                    <h4>Filter</h4>
+                    <button onclick={handleResetValues}>Reset</button>
+                </div>
+                <div class="filterContent">
+                    <h4>Type</h4>
+                    <div class="filterContentWrapper">
+                        <button class={volvoButtonClass} onclick={handleSelectVolvo}>Volvo</button>
+                        <button class={deluxeButtonClass} onclick={handleSelectDeluxe}>Deluxe</button>
+                        <button class={semiDButtonClass} onclick={handleSelectSDeluxe}>Semi-Deluxe</button>
+                    </div>
+                </div>
+                <div class="filterContent">
+                    <div class="titleWrapper">
+                        <h4>Price Range</h4>
+                        <h4>₹ {selectedMaximumFare}</h4>
+                    </div>
+                    <div class="filterContentWrapper">
+                        <input class="rangeBar" type="range" min={minValue} max={maxValue} value={selectedMaximumFare} oninput={handleRangeValueChange}></input>
+                    </div>
+                </div>
+                <div class="filterContent">
+                    <h4>Ratings</h4>
+                    <div class="starWrapperContainer">
+                        <div class="starWrapper">
+                            <h4>4 Stars & up</h4>
+                            <button onclick={handleSelectFourStars} class={fourStarSelector}></button>
+                        </div>
+                        <div class="starWrapper">
+                            <h4>3 Stars & up</h4>
+                            <button onclick={handleSelectThreeStars} class={threeStarSelector}></button>
+                        </div>
+                        <div class="starWrapper">
+                            <h4>2 Stars & up</h4>
+                            <button onclick={handleSelectTwoStars} class={twoStarSelector}></button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button onclick={handleShowFilteredResults} class="applyFilters">Show Results</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,259 @@
+<!-- sldsValidatorIgnore
+<template>
+
+    <div  if:false={displayReceipt} class="container">
+        <div class="container-wrapper">
+            <div class="one">
+                <div class="commonClass">
+                    <h3>Passenger Name</h3>
+                    <h1>{userName}</h1>
+                </div>
+                    <div class="commonClass">
+                        <h3>Selected Seats : </h3>
+                        <template for:each={selectedSeats} for:item="seat">
+                            <div key={seat.Id}>
+                                <h1>{seat.Name}</h1>
+                            </div>
+                        </template>
+                    </div>
+                <div class="commonClass">
+                    <h3>Pickup Loaction : </h3>
+                    <h1>{sourceCity}</h1>
+                </div>
+                <div class="commonClass">
+                    <h3>Drop Location : </h3>
+                    <h1>{destinationCity}</h1>
+                </div>
+                <div class="commonClass">
+                    <h3>Journey Date :</h3>
+                    <h1>{currentDate}</h1>
+                </div>
+            </div>
+            <div class="two">
+                <div class="header">
+                    <div class="date">
+                        <h3>{currentDate}</h3>
+                    </div>
+                    <div class="logo">
+                        <h1>Unicorn Bus</h1>
+                    </div>
+                </div>
+                <div class="myClass successMsg">
+                    <h3 class="greet">Hello {userName}</h3>
+                    <h1>Confirm Payment?</h1>
+                    <h5>Amount of Rs {fare} will be deducted from your wallet.</h5>
+                    <button class="myButton" onclick={handlePayment}>Confirm Payment</button>
+                </div>
+            </div>
+          </div>
+    </div>
+
+
+    <div if:true={displayReceipt} class="container">
+        <div class="container-wrapper">
+          <div class="one">
+              <div class="commonClass">
+                  <h3>Receipt for</h3>
+                  <h1>{userName}</h1>
+              </div>
+              <div class="commonClass">
+                  <h3>Amount : </h3>
+                  <h1>Rs {fare}</h1>
+              </div>
+              <div class="commonClass">
+                  <h3>Pickup Loaction : </h3>
+                  <h1>Vadodara</h1>
+              </div>
+              <div class="commonClass">
+                  <h3>Drop Location : </h3>
+                  <h1>Ahmedabad</h1>
+              </div>
+              <div class="commonClass">
+                  <h3>Bus Name :</h3>
+                  <h1>{busName}</h1>
+              </div>
+          </div>
+          <div class="two">
+              <div class="header">
+                  <div class="date">
+                      <h3>{currentDate}</h3>
+                  </div>
+                  <div class="logo">
+                      <h1>Unicorn Bus</h1>
+                  </div>
+              </div>
+              <div class="myClass successMsg">
+                  <h1>Booking Successful!!!</h1>
+                  <h3 class="greet">Hello {userName}</h3>
+                  <h5>Your payment of Rs {fare} has been received.</h5>
+                  <h5>Thank you for choosing Unicorn Bus.</h5>
+                  <h5>Have a safe and happy journey!</h5>
+              </div>
+          </div>
+        </div>  
+  </div>
+
+</template> -->
+
+<template>
+
+
+    <div class="slds-theme_default" style="margin-bottom: 2em; z-index: 3;">
+        <div class="slds-p-around_medium">
+            <lightning-progress-indicator type="path" current-step={selectedStep}>
+
+                <lightning-progress-step label="Step1" onstepfocus={selectStep1} value="Step1">
+                </lightning-progress-step>
+
+                <lightning-progress-step label="Step2"  onstepfocus={selectStep2} value="Step2">
+                </lightning-progress-step>
+
+                <lightning-progress-step label="Step3" value="Step3" onstepfocus={selectStep3}>
+                </lightning-progress-step>
+
+                <lightning-progress-step label="Step4" value="Step4">
+                </lightning-progress-step>
+
+            </lightning-progress-indicator>
+        </div>
+    </div>
+
+
+
+    <div if:false={showEnterOtpPopUp} class="container">
+        <div class="journeyDetails">
+            <div class="header">
+                <h3>Review Booking</h3>
+            </div>
+            <div class="busDetails">
+                <div class="busName">
+                    <h4>{busName}</h4>
+                    <h5>{busType}</h5>
+                </div>
+                
+                <div class="journeyData">
+                    <div class="city">
+                        <h4 class="marginLeft">{pickupDate}</h4>
+                        <h3>{pickupTime}</h3>
+                        <h5>{sourceCity}</h5>
+                    </div>
+                    <div class="duration">{journeyDuration}</div>
+
+                    <div class="city">
+                        <h4>{dropDate}</h4>
+                        <h3>{dropTime}</h3>
+                        <h5>{destinationCity}</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="pickupPoints">
+                <div class="pickup">
+                    <h4>Pick Up</h4>
+                    <h5>{pickupPointAddress}</h5>
+                    <h5>{pickupPointCity}</h5>
+                </div>
+                <div class="drop">
+                    <h4>Drop Off</h4>
+                    <h5>{dropPointAddress}</h5>
+                    <h5>{dropPointCity}</h5>
+                </div>
+            </div>
+            <div class="seats">
+                <h4>Seats</h4>
+                <div>
+                    <template for:each={travelerDetails} for:item = 'traveler'>
+                        <div key={traveler.Id}>
+                            <h5>Seat {traveler.Seat_Details__c}</h5>
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="traveller">
+                <h4 class="title">Traveler(s)</h4>
+                <div class="name">
+                    <template for:each={travelerDetails} for:item="traveler">
+                        <div key={traveler.Id} class="travelerNameAge">
+                            <h4>{traveler.Traveller_Name__c}</h4>
+                            <h5>{traveler.Traveller_Gender__c}, {traveler.Traveller_Age__c}</h5>
+                        </div>
+                    </template>
+                    
+                </div>
+                <h6>{userName} | {userEmail}</h6>
+            </div>
+        </div>
+
+        <div class="confirmBookContainer">
+            <div class="amountBox">
+                <div if:true={isSittingSeatFareVisible} class="totalAmount">
+                    <div class="breakdownTitle">Sitting x {sittingSeatsCount}</div>
+                    <div class="price">₹ {sittingFare}</div>
+                </div>
+                <div  if:true={isSleeperSeatFareVisible} class="totalAmount">
+                    <div class="breakdownTitle">Sleeper x {sleeperSeatsCount}</div>
+                    <div class="price">₹ {sleeperFare}</div>
+                </div>
+                <div class="totalAmount">
+                    <div class="totalDueTitle">Total Fare</div>
+                    <div class="totalPrice">₹ {totalFare}</div>
+                </div>
+                <div class="buttonBox">
+                    <button onclick={handleSendOTP}>PROCEED</button>
+                </div>
+
+                <!-- <div class="otpWrapper" if:true={showEnterOtpPopUp}>
+                    <div>
+                        <h2>ENTER OTP</h2>
+                    </div>
+                    <div>
+                        <h3>An OTP has been sent to your registered Email</h3>
+                    </div>
+                    <div class="flexBox">
+                        <lightning-input class="otpInput" type="number" maxlength="1"
+                            value={digit1} onkeyup={handleKeyUp} onchange={handleChange1}></lightning-input>
+                        <lightning-input class="otpInput" type="number" maxlength="1"
+                            value={digit2} onkeyup={handleKeyUp} onchange={handleChange2}></lightning-input>
+                        <lightning-input class="otpInput" type="number" maxlength="1"
+                            value={digit3} onkeyup={handleKeyUp} onchange={handleChange3}></lightning-input>
+                        <lightning-input class="otpInput" type="number" maxlength="1"
+                            value={digit4} onkeyup={handleKeyUp} onchange={handleChange4}></lightning-input>
+                    </div>
+                    <div class="buttonWrapper">
+                        <button label="Submit" onclick={handleSubmitOTP}>SUBMIT</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="otpContainer">
+        <div class="otpWrapper" if:true={showEnterOtpPopUp}>
+            <div>
+                <h2>ENTER OTP</h2>
+            </div>
+            <div>
+                <h3>An OTP has been sent to {userEmail}</h3>
+            </div>
+            <div class="flexBox">
+                <lightning-input class="otpInput" type="number" maxlength="1"
+                    value={digit1} onkeyup={handleKeyUp} onchange={handleChange1}></lightning-input>
+                <lightning-input class="otpInput" type="number" maxlength="1"
+                    value={digit2} onkeyup={handleKeyUp} onchange={handleChange2}></lightning-input>
+                <lightning-input class="otpInput" type="number" maxlength="1"
+                    value={digit3} onkeyup={handleKeyUp} onchange={handleChange3}></lightning-input>
+                <lightning-input class="otpInput" type="number" maxlength="1"
+                    value={digit4} onkeyup={handleKeyUp} onchange={handleChange4}></lightning-input>
+            </div>
+            <div class="buttonWrapper">
+                <button label="Submit" onclick={handleSubmitOTP}>SUBMIT</button>
+            </div>
+            <div class="resendOTP">
+                <h4>Not received the OTP?</h4>
+                <div class="resendOTPButtonWrapper">
+                    <button label="Submit" onclick={handleResendOTP}>Resend OTP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

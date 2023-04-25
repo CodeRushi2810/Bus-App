@@ -1,0 +1,23 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="cityWrapper2">
+        <h4>{record.Source_City__c}</h4>
+        <div class="dots">o----------</div>
+        <h4>{record.Destination_City__c}</h4>
+    </div>
+    <div class="header">
+        <div class="left">
+            <h5>{record.Bus_Id__r.Name}</h5>
+        </div>
+        <div class="right">
+            <h5>₹ {record.Total_Fare__c}</h5>
+        </div>
+    </div>
+    <div class="dates">
+        <h5>Journey Date - {record.Journey_Date__c}</h5>
+        <h5>Booking Date - {record.Booking_Date__c}</h5>
+        <h5>Start Time - {record.Start_Time__c}</h5>
+        <h5>End Time - {record.End_Time__c}</h5>
+    </div>
+</template>

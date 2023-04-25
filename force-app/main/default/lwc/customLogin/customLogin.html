@@ -1,0 +1,30 @@
+<template>
+    
+    <div class="container">
+        <div class="wrapper">
+            <div class="content">
+
+                <h1 class="logo">Login</h1>
+                <h4 class="punchLine">Let's get started with your journey</h4>
+                <h4 class="mobile">to your happy place</h4>
+
+                <lightning-input class="input" type="Email" placeholder="Email" value={email} onchange={handleChangeEmail}></lightning-input>
+
+                <lightning-input class="input" type="Password" placeholder="Password" value={password} onchange={handleChangePassword}></lightning-input>
+
+                <lightning-button class="btn" label="Login" variant="brand" onclick={handleLogin}></lightning-button>
+
+
+                <h4>Not a user?</h4>
+                <lightning-button class="btn2" label="Register" variant="brand" onclick={handleRegister}></lightning-button>
+
+            </div>
+            <div class="image-wrapper">
+                <img class="image" src={registerImg2} alt="">
+            </div>
+        </div>
+    </div>
+    
+</template>
+
+<!-- unicornbuses -->

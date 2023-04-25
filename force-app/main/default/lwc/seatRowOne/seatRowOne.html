@@ -1,0 +1,17 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card>
+        <lightning-input value={sourceCity} type="text" label="Search" onchange={handleSearch}></lightning-input>
+    </lightning-card>
+
+    <div if:true={showTemplate}>
+        <ul>
+            <template for:each={searchResults} for:item="result">
+                <div key={result.Id}>
+                    <button onclick={handleInputCityOne} value={result.Name}>{result.Name}</button>
+                </div>
+            </template>
+        </ul>
+    </div>
+</template>

@@ -1,0 +1,956 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+    color: white;
+}
+h1{
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+}
+h3{
+    color: cyan;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+h4{
+    color: #ababab;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+h5{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #ababab;
+}
+
+.reviewH1{
+    color: cyan;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.reviewH3{
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.box h3{
+    color: cyan;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.box h5{
+    color: #ababab;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.container{
+    width: 100%;
+    height: 80vh;
+    margin-bottom: 5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.container-Wrapper{
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content-Wrapper{
+    width: 75%;
+}
+.title{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ababab;
+}
+.busName{
+    width: 35%;
+}
+.location{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.jourenyDate{
+    width: 25%;
+    display: flex;align-items: center;
+    justify-content: flex-end;
+}
+
+.facilities{
+    padding-top: 2em;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.facilities2{
+    padding-top: 2em;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.box{
+    margin-bottom: 1em;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.one{
+    width: 30%;
+    background-color: cyan;
+    border: 1px solid cyan;
+    border-radius: 15px;
+    color: black;
+    padding: 0.5em 0;
+    font-size: 1.5em;
+    transition: background-color 0.5s, color 0.5s; 
+}
+.one:hover{
+    background-color: black;
+    color: cyan;
+}
+.two{
+    width: 30%;
+    color: #ababab;
+    padding: 0.5em 0;
+    font-size: 1.5em;
+    border-radius: 15px;
+    background-color: black;
+    border: 1px solid cyan;
+    transition: background-color 0.5s, color 0.5s, border 0.5s;
+}
+.two:hover{
+    background-color: cyan;
+    color: black;
+    border: 1px solid black;
+}
+.about{
+    margin-top: 1em;
+    width: 100%;
+}
+.about h5{
+    color: #ababab;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.bookSeat{
+    margin-top: 1em;
+    width: 100%;
+    background-color: cyan;
+    border: 1px solid cyan;
+    border-radius: 15px;
+    color: black;
+    padding: 0.5em 0;
+    font-size: 1.5em;
+    transition: scale 0.5s, box-shadow 0.5s;
+}
+.bookSeat:hover{
+    scale:1.01;
+    box-shadow: -30px 30px 100px -1px cyan;
+}
+.bar-Wrapper{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bar {
+    list-style: none;
+  }
+  .bar >li {
+    font-size: 1rem;
+    padding-top:3em;
+    position: relative;
+    color: cyan;
+  }
+  .bar>li:before {
+    content: '\25CF';
+    margin-right: 20px;
+    font-size: 40px;
+    color: cyan;
+  }
+  .bar>li:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: '';
+    border-left: 4px solid cyan;
+    margin-left: 10px;
+    height: 100%;
+  }
+  .bar >li:first-of-type:after {
+    top: 80%;
+  }
+  .bar >li:last-of-type:after {
+    top: -20%;
+  }
+.bar2{
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.timeWrapper{
+    margin-bottom: 24px;
+    margin-left: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.lastStop{
+    margin-top: 1em;
+}
+
+.about{
+    height: 250px;
+     width: 100%;
+    overflow: auto;
+}
+.reviewContainer{
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    border-bottom: 1px solid cyan;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.reviewWrapper{
+    width: 80%;
+    margin-right: 2em;
+}
+.topBar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+
+
+
+/* New Beginning............................ */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Play', sans-serif;
+
+    --fw-h1: 800;
+    --fw-h2: 600;
+    --fw-h3: 500;
+    --fw-h4: 400;
+    --fw-h5: 300;
+    --fw-h6: 300;
+    --fw-p: 500;
+
+    --fs-h1: 3.5rem;
+    --fs-h2: 2.5rem;
+    --fs-h3: 2rem;
+    --fs-h4: 1.5rem;
+    --fs-h5: 1rem;
+    --fs-h6: 0.7rem;
+    --fs-p: 0.5rem;
+
+    --accent-clr: #fefefe;
+    --secondary-accent-clr: #4c4c4c;
+    --secondary-accent-clr-light: #8a8a8a;
+    --primary-clr: #05060e;
+    --secondary-clr-light: #000000;
+}
+h1{
+    font-weight: var(--fw-h1);
+    font-size: var(--fs-h1);
+}
+h2{
+    font-weight: var(--fw-h2);
+    font-size: var(--fs-h2);
+}
+h3{
+    font-weight: var(--fw-h3);
+    font-size: var(--fs-h3);
+}
+h4{
+    font-weight: var(--fw-h4);
+    font-size: var(--fs-h4);
+}
+h5{
+    font-weight: var(--fw-h5);
+    font-size: var(--fs-h5);
+}
+h6{
+    font-weight: var(--fw-h6);
+    font-size: var(--fs-h6);
+}
+p{
+    font-weight: var(--fw-p);
+    font-size: var(--fs-p);
+}
+
+.displayResults{
+    margin: 1.5em 0;
+    border: 1px solid var(--secondary-clr-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+}
+.dflex{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.resultLeft{
+    width: 95%;
+    margin: 0.7em 1em;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    padding: 0.7em 0;
+}
+.header h6{
+    color: var(--secondary-accent-clr-light);
+    font-weight: var(--fw-h3);
+}
+.busName{
+    color: var(--primary-clr);
+}
+.ratings{
+    color: var(--secondary-accent-clr);
+}
+.ratingStyle{
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    color: var(--accent-clr);
+    border-radius: 5px;
+    border: none;
+    padding: 0.1em;
+}
+.margin1{
+    margin-left: 1em;
+}
+.margin-auto{
+    margin-left: auto;
+    margin-left: auto;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.margin2{
+    margin-left: auto;
+}
+.margin3{
+    font-weight: var(--fw-h2);
+    margin-left: auto;
+    margin-right: auto;
+}
+.margin4{
+    margin-top: 1em;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.time{
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.time h6{
+    color: var(--secondary-accent-clr);
+}
+.resultRight{
+    width: 100%;
+    background-color: #f2f2f2;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0.7em 1em;
+}
+.fare{
+    color: var(--secondary-accent-clr);
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-h2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.fare h4{
+    color: var(--primary-clr);
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-h2);
+}
+.fare h5{
+    color: var(--secondary-accent-clr-light);
+}
+.bookSeat{
+    width: 100%;
+    padding: 0.3em 1em;
+    border-radius: 5px;
+    display: contents;
+    border: none;
+    color: var(--accent-clr);
+}
+.bookSeatsWrapper{
+    background-color:  pink;
+}
+.bookSeatsWrapper button{
+    width: 100%;
+    padding: 0.3em 1em;
+    border-radius: 5px;
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    border: none;
+    color: var(--accent-clr);
+}
+.selectSeatButton{
+    width: 50%;
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    color: var(--accent-clr);
+    font-weight: var(--fw-h3);
+    font-size: var(--fs-h5);
+    border: none;
+    border-radius: 20px;
+    padding: 0.5em 2em;
+}
+.expandables{
+    width: 100%;
+    padding: 0 1em;
+    border-top: 1px solid var(--secondary-accent-clr-light);
+}
+
+.buttons{
+    margin-top: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dropdownButtonsActive{
+    background: linear-gradient(337deg, #01296f, #6ca1ff);
+    transition: all 0.5s;
+    width: 30%;
+    color: var(--accent-clr);
+    font-weight: var(--fw-h3);
+    font-size: var(--fs-h6);
+    border: none;
+    border-radius: 20px;
+    padding: 0.2em 0;
+}
+.dropdownButtonsInActive{
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    transition: all 0.5s;
+    width: 20%;
+    color: var(--accent-clr);
+    font-weight: var(--fw-h3);
+    font-size: var(--fs-h6);
+    border: none;
+    border-radius: 20px;
+    padding: 0.2em 0;
+    transition: all 0.5s;
+}
+.dropdownButtonsInActive:hover{
+    background: linear-gradient(337deg, #01296f, #6ca1ff);
+    border: none;
+}
+.margin-top-bottom{
+    margin: 1em 0;
+}
+.policyButtons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.policyButton{
+    padding: 0.2em 0.5em;
+    margin: 0.8em 0;
+    background: linear-gradient(337deg, #01296f, #6ca1ff);
+    color: var(--accent-clr);
+    border-radius: 5px;
+    border: none;
+    font-size: var(--fs-h6);
+    font-weight: var(--fw-h6);
+    transition: all 0.5s;
+}
+.policyButton:hover{
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+}
+.cancellation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cancelTime h5{
+    margin-bottom: 1em;
+}
+.penalty h5{
+    margin-bottom: 1em;
+}
+.penalty h6{
+    margin-left: auto;
+}
+.top{
+    display: flex;
+    align-items: center;
+    margin: 1em 0;
+    justify-content: space-between;
+}
+.bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.pickup{
+    margin-bottom: 1em;
+}
+.pointTitle{
+    font-weight: var(--fw-h2);
+    font-size: var(--fs-h5);
+    margin-bottom: 1em;
+}
+.pointTitle2{
+    font-weight: var(--fw-h2);
+    font-size: var(--fs-h5);
+}
+.point{
+    display: flex;
+    align-items: center;
+}
+.pointButton{
+    border: none;
+    width: 100%;
+    text-align: left;
+    background: #f2f2f3;
+    border-radius: 15px;
+    padding: 0.3em 2em;
+    transition: all 0.5s;
+}
+.pointButton:hover{
+    background: linear-gradient(to bottom, #051322, #15457c);
+    color: white;
+}
+.pointButtonSelected{
+    border: none;
+    width: 100%;
+    text-align: left;
+    background: linear-gradient(to bottom, #051322, #15457c);
+    color: white;    border-radius: 15px;
+    padding: 0.3em 2em;
+    transition: all 0.5s;
+}
+
+.margin-left{
+    font-weight: var(--fw-h2);
+    margin-left: 2em;
+}
+.margin-right{
+    margin-right: auto;
+}
+.padding{
+    border-top: 1px solid var(--secondary-accent-clr-light);
+    padding: 1em 1em;
+}
+.legend{
+    display: flex;
+    margin: 1em 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.selectedLegend{
+    padding: 0.3em 0.6em;
+    margin-left: auto;
+    height: 25px;
+    background-color: var(--primary-clr);
+    border: 1px solid var(--primary-clr);
+    border-radius: 2px;
+    color: var(--accent-clr);
+}
+.bookedLegend{
+    padding: 0.3em 0.6em;
+    margin-left: 0.5em;
+    height: 25px;
+    background-color: var(--secondary-accent-clr-light);
+    border: 1px solid var(--primary-clr);
+    border-radius: 2px;
+}
+.availableLegend{
+    padding: 0.3em 0.6em;
+    margin-left: 0.5em;
+    height: 25px;
+    background-color: var(--accent-clr);
+    border: 1px solid var(--primary-clr);
+    border-radius: 2px;
+}
+.available{
+    height: 25px;
+    width: 50px;
+    background-color: var(--accent-clr);
+    border: 1px solid var(--primary-clr);
+    border-radius: 2px;
+}
+.booked{
+    height: 25px;
+    width: 50px;
+    background-color: var(--secondary-accent-clr-light);
+    border: 1px solid var(--primary-clr);
+    border-radius: 2px;
+}
+.selected{
+    height: 25px;
+    width: 50px;
+    background-color: var(--primary-clr);
+    border: 1px solid var(--primary-clr);
+    border-radius: 2px;
+    color: var(--accent-clr);
+}
+
+.selectedPoints{
+    width: 100%;
+}
+.point-h5{
+    font-weight: var(--fw-h2);
+}
+.selectedPointsWrapper{
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.pointContainer{
+    width: 48%;
+    border: 1px solid black;
+    padding: 0.5em 1em;
+    max-height: 300px;
+    min-height: 140px;
+    border-radius: 5px;
+    margin: 1em 0;
+}
+.pointContainer h4{
+    font-weight: var(--fw-h3);
+    font-size: 16px;
+    color: var(--secondary-accent-clr);
+    margin-bottom: 0.7em;
+}
+.pointContainer h6{
+    color: var(--secondary-accent-clr-light);
+    font-weight: var(--fw-h3);
+}
+
+.bookingClosed{
+    width: 100%;
+    background: linear-gradient(93deg, #db5d47, #a81900);
+    padding: 0.3em 1em;
+    border-radius: 5px;
+    border: none;
+    color: var(--accent-clr);
+}
+
+.seats{
+    position: relative;
+}
+.seatTitle1{
+    font-size: var(--fs-h6);
+    color: var(--secondary-accent-clr-light);
+    position: absolute;
+    left: 0;
+    top: 95px;
+    transform: rotate(270deg);
+    transform-origin: bottom left;
+}
+.seatTitle2{
+    font-size: var(--fs-h6);
+    color: var(--secondary-accent-clr-light);
+    position: absolute;
+    left: 0;
+    top: 290px;
+    transform: rotate(270deg);
+    transform-origin: bottom left;
+}
+.sittingSeatsWrapper{
+    border: 1px solid var(--primary-clr);
+    padding: 0.7em 1em;
+    width: 100%;
+  }
+  .right{
+    margin-bottom: 2em;
+  }
+  .rightOne{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+  }
+  .rightTwo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .leftOne{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5em;
+  }
+  .leftTwo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .legend{
+    display: flex;
+    margin: 1em 0;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .selectedLegend{
+    padding: 0.3em 0.6em;
+    margin-left: 0.5em;
+    height: 25px;
+    background: cornflowerblue;
+    border: none;
+    border-radius: 2px;
+    color: var(--accent-clr);
+  }
+  .bookedLegend{
+    padding: 0.3em 0.6em;
+    margin-left: auto;
+    height: 25px;
+    background: linear-gradient(93deg, #db5d47, #a81900);
+    border: none;
+    border-radius: 2px;
+  }
+  .availableLegend{
+    padding: 0.3em 0.6em;
+    margin-left: 0.5em;
+    height: 25px;
+    background-color: #EFEFEF;
+    border: 1px solid var(--primary-clr);
+    border-radius: 2px;
+  }
+  .commonSeatClass{
+    height: 25px;
+    width: 50px;
+    border-radius: 2px;
+  }
+  .commonSleeperSeatClass{
+    height: 25px;
+    width: 100px;
+    border-radius: 4px;
+  }
+  .marginTop{
+    margin-top: 2em;
+  }
+  .selectedSeats{
+    margin: 1em 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .flexContainer{
+    display: flex;
+    flex-direction: row;
+  }
+  .seatName-h5{
+    font-weight: var(--fw-h2);
+  }
+  .seatName-h6{
+    margin-right: 16px;
+    font-weight: var(--fw-h4);
+  }
+  .totalFare h5{
+    font-weight: var(--fw-h2);
+  }
+  .totalFare h6{
+    font-weight: var(--fw-h4);
+  }
+  
+  
+  .bookSeat{
+    width: 100%;
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    padding: 0.3em 1em;
+    border-radius: 5px;
+    border: none;
+    color: var(--accent-clr);
+  }
+  
+  .reviewsWrapper{
+    max-height: 250px;
+    width: 100%;
+    overflow: auto;
+}
+.passengerReviewWrapper{
+    border-top: 1px solid var(--secondary-accent-clr);
+    padding: 1.5em 1em;
+    width: 100%;
+}
+.reviewDetails{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+@media(min-width : 750px){
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Play', sans-serif;
+    
+        --fw-h1: 800;
+        --fw-h2: 600;
+        --fw-h3: 500;
+        --fw-h4: 400;
+        --fw-h5: 300;
+        --fw-h6: 300;
+        --fw-p: 500;
+    
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.5rem;
+        --fs-h3: 3rem;
+        --fs-h4: 2rem;
+        --fs-h5: 1.5rem;
+        --fs-h6: 1rem;
+        --fs-p: 0.7rem;
+    
+        --accent-clr: #fefefe;
+        --secondary-accent-clr: #4c4c4c;
+        --secondary-accent-clr-light: #8a8a8a;
+        --primary-clr: #05060e;
+        --secondary-clr-light: #000000;
+    }
+
+    .margin-auto{
+        font-size: 1.3rem;
+    }
+
+    .dropdownButtonsActive{
+        background: linear-gradient(337deg, #01296f, #6ca1ff);
+        transition: all 0.5s;
+        width: 30%;
+        color: var(--accent-clr);
+        font-weight: var(--fw-h3);
+        font-size: var(--fs-h6);
+        border: none;
+        border-radius: 20px;
+        padding: 0.2em 0;
+    }
+    .dropdownButtonsInActive{
+        background: linear-gradient(93deg, #53b2fe, #065af3);
+        transition: all 0.5s;
+        width: 20%;
+        color: var(--accent-clr);
+        font-weight: var(--fw-h3);
+        font-size: var(--fs-h6);
+        border: none;
+        border-radius: 20px;
+        padding: 0.2em 0;
+        transition: all 0.5s;
+    }
+    .displayResults{
+        margin: 1.5em 0 3em 0;
+        border: 1px solid var(--secondary-clr-light);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-radius: 5px;
+        box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.75);
+    }
+    .dflex{
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .resultLeft{
+        width: 65%;
+        margin: 0.7em 1em;
+    }
+    .resultRight{
+        width: 30%;
+        background-color: #f2f2f2;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        padding: 0.7em 1em;
+    }
+    .bookSeat{
+        width: 100%;
+        padding: 0.3em 1em;
+        border-radius: 5px;
+        display: contents;
+        border: none;
+        color: var(--accent-clr);
+    }
+    .pointContainer h4{
+        font-weight: var(--fw-h3);
+        font-size: 32px;
+        color: var(--secondary-accent-clr);
+        margin-bottom: 0.7em;
+    }
+    .selectSeatButton{
+        width: 70%;
+        background: linear-gradient(93deg, #53b2fe, #065af3);
+        color: var(--accent-clr);
+        font-weight: var(--fw-h3);
+        font-size: var(--fs-h6);
+        border: none;
+        border-radius: 20px;
+        padding: 0.2em 2em;
+    }
+    .expandables{
+        width: 100%;
+        padding: 0 1em;
+        border-top: 1px solid var(--secondary-accent-clr-light);
+    }
+    .expandablesWrapper{
+        width: 100%;
+    }
+    
+    .journeyInfoWrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .locationWrapper{
+        width: 45%;
+    }
+    .seatWrapper{
+        width: 45%;
+    }
+}
+

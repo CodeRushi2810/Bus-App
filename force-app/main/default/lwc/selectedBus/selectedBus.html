@@ -1,0 +1,468 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!--
+<template>
+    <template iterator:bus={data}>
+        <div class="container" key={bus.value.Id}>
+            <div class="container-Wrapper">
+                <div class="content-Wrapper">
+                    <div class="title">
+                        <div class="busName">
+                            <h1>{bus.value.Name}</h1>
+                        </div>
+                        <div class="location">
+                            <h3>{bus.value.Source_City__c}</h3>
+                            <h5>TO</h5>
+                            <h3>{bus.value.Destination_City__c}</h3>
+                        </div>
+                        <div class="jourenyDate">
+                            <h5>Date : {journeyDate}</h5>
+                        </div>
+                    </div>
+                    <div class="facilities">
+                        <div class="first">
+                            <div class="box">
+                                <h3>Bus Number</h3>
+                                <h5>{bus.value.Bus_Number__c}</h5>
+                            </div>
+                            <div class="box">
+                                <h3>Dinner/Lunch</h3>
+                                <h5>Yes</h5>
+                            </div>
+                            <div class="box">
+                                <h3>Essentials</h3>
+                                <h5>Pillow, Water</h5>
+                            </div>
+                        </div>
+                        <div class="third">
+                            <div class="box">
+                                <h3>Total Distance</h3>
+                                <h5>{totalDistance} Kms</h5>
+                            </div>
+                            <div class="box">
+                                <h3>Pick Up Time</h3>
+                                <h5>{pickupTime}</h5>
+                            </div>
+                            <div class="box">
+                                <h3>Drop Time</h3>
+                                <h5>{dropTime}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button onclick={handleShowInfo} class={button1Class}>Facilities</button>
+                        <button onclick={handleShowReviews} class={button2Class}>Reviews</button>
+                        <button onclick={handleShowContact} class={button3Class}>Contact</button>
+                    </div>
+
+                    <div if:true={information} class="about">
+                        <div class="facilities2">
+                            <div class="first">
+                                <div class="box">
+                                    <h3>Wifi</h3>
+                                    <h5>Access in the bus</h5>
+                                </div>
+                                <div class="box">
+                                    <h3>Dinner/Lunch</h3>
+                                    <h5>Yes</h5>
+                                </div>
+                                <div class="box">
+                                    <h3>Essentials</h3>
+                                    <h5>Pillow, Water</h5>
+                                </div>
+                            </div>
+                            <div class="second">
+                                <div class="box">
+                                    <h3>AC</h3>
+                                    <h5>AC is available</h5>
+                                </div>
+                                <div class="box">
+                                    <h3>Safety Features</h3>
+                                    <h5>Sanitized, Masks</h5>
+                                </div>
+                                <div class="box">
+                                    <h3>Snacks</h3>
+                                    <h5>Juice / shake</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div if:true={reviews}  class="about">
+                        <template for:each={passengerReviews} for:item = "review">
+                            <div key={review.Id}>
+                                <div class="reviewContainer">
+                                    <div class="reviewWrapper">
+                                        <div class="topBar">
+                                            <h1 class="reviewH1">{review.Passenger_Name__r.Name}</h1>
+                                            <h4>{review.Ratings__c} <lightning-icon class="iconPad" icon-name="utility:favorite" size="small"></lightning-icon></h4>
+                                        </div>
+                                        <h3 class="reviewH3">{review.Name}</h3>
+                                        <h5>{review.Feedback__c}</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </div>
+
+                    <div if:true={contact} class="about">
+                        <h3>Contact</h3>
+                        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi ad laboriosam necessitatibus. Dolor at quo, quidem inventore quos perspiciatis voluptatibus a laborum. Eius, fugit dolorem pariatur neque aliquid temporibus. Officiis.</h5>
+                    </div>
+                    <div if:true={bookingStatus}>
+                        <button  class="bookSeat" value={myDataId} onclick={handleViewSeats}>BOOK YOUR SEAT NOW</button>
+                    </div>
+                    <div if:false={bookingStatus}>
+                        <button  class="bookSeat" onclick={handleSeatsFull}>BOOKING CLOSED</button>
+                    </div>
+                </div>
+
+                <div class="bar-Wrapper">
+                    <ul class="bar">
+                        <li>{stop1}</li>
+                        <li>{stop2}</li>
+                        <li>{stop3}</li>
+                        <li>{stop4}</li>
+                        <li>{stop5}</li>
+                    </ul>
+                    <div class="bar2">
+                        <div class="timeWrapper">
+                            <h5>Arrival Time : {arrival1}</h5>
+                            <h5>Halt Duration : {halt1}</h5>
+                            <h5>Departure Time : {departure1}</h5>
+                        </div>
+                        <div class="timeWrapper">
+                            <h5>Arrival Time : {arrival2}</h5>
+                            <h5>Halt Duration : {halt2}</h5>
+                            <h5>Departure Time : {departure2}</h5>
+                        </div>
+                        <div class="timeWrapper">
+                            <h5>Arrival Time : {arrival3}</h5>
+                            <h5>Halt Duration : {halt3}</h5>
+                            <h5>Departure Time : {departure3}</h5>
+                        </div>
+                        <div class="timeWrapper">
+                            <h5>Arrival Time : {arrival4}</h5>
+                            <h5>Halt Duration : {halt4}</h5>
+                            <h5>Departure Time : {departure4}</h5>
+                        </div>
+                        <div class="timeWrapper lastStop">
+                            <h5>Arrival Time : {arrival5}</h5>
+                        </div>
+                        
+                    </div>
+                </div>
+
+            </div>   
+        </div>     
+    </template>
+</template>
+
+
+-->
+
+<!-- New Beginning............................................. -->
+<template>
+    <div class="displayResults">
+      <div class="dflex">
+        <div class="resultLeft">
+          <div class="header">
+            <h4 class="busName">{record.Bus_Name__r.Name}</h4>
+            <h5 class="margin1 ratings ratingStyle">{record.Ratings__c}/5</h5>
+            <h6 class="margin1 ratings">{record.Total_Ratings__c} Ratings</h6>
+
+            <h4 class="margin-auto ratings">{record.Bus_Name__r.Bus_Number__c}</h4>
+          </div>
+          <div class="details">
+            <h6>{record.Bus_Name__r.Type__c}</h6>
+            <h6 class="margin1">{record.Seats_Left__c} Seats Left</h6>
+            <h6 class="margin2">{record.Window_Seats_Left__c} Window Seats</h6>
+          </div>
+          <div class="time">
+            <div class="journeyTime">
+              <h6>{record.Start_Date_Time__c}</h6>
+            </div>
+            <h6 class="margin3">----{record.Journey_Duration__c}----</h6>
+            <div class="journeyTime">
+              <h6>{record.End_Date_Time__c}</h6>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class={policyButton} onclick={handleShowPolicies}>
+              Policies
+            </button>
+            <button class={amenityButton} onclick={handleShowAmenities}>
+              Amenities
+            </button>
+            <button class={reviewButton} value={record.Bus_Name__c} onclick={handleShowReviews}>
+              Reviews
+            </button>
+          </div>
+        </div>
+
+        <div class="resultRight">
+          <div class="fare">
+            <h5>starting from</h5>
+            <h4 class="fare">₹{record.Lowest_Fare__c}</h4>
+          </div>
+          <div class="bookSeat">
+            <button onclick={handleShowPickupPoints} value={record.Id} class="selectSeatButton">
+              VIEW SEATS
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="expandables">
+        <div class="expandablesWrapper">
+          <div if:true={policies} class="policies margin-top-bottom">
+            <h4>Policies</h4>
+            <div class="policyButtons">
+              <button class="policyButton" onclick={handlePolicyCancellation}>
+                CANCELLATION
+              </button>
+              <button class="policyButton" onclick={handlePolicyLuggage}>
+                LUGGAGE
+              </button>
+              <button class="policyButton" onclick={handlePolicyLiqour}>
+                Liqour
+              </button>
+              <button class="policyButton" onclick={handlePolicyPickupTime}>
+                PICKUP TIME
+              </button>
+            </div>
+            <div if:true={cancellation} class="cancellation">
+              <div class="cancelTime">
+                <h5>Cancellation Time</h5>
+                <h6>More than 48 hrs before travel</h6>
+                <h6>24 to 48 hr(s) before travel</h6>
+                <h6>6 to 24 hr(s) before travel</h6>
+                <h6>0 to 6 hr(s) before travel</h6>
+              </div>
+              <div class="penalty">
+                <h5>Penalty %</h5>
+                <h6>15 %</h6>
+                <h6>50 %</h6>
+                <h6>60 %</h6>
+                <h6>100 %</h6>
+              </div>
+            </div>
+            <div if:true={luggage} class="luggage">
+              <div class="luggageInfo">
+                <h6>
+                  - 2 pieces of luggage will be accepted free of charge per passenger.
+                  Excess items will be chargeable
+                </h6>
+              </div>
+            </div>
+            <div if:true={liqour} class="pets">
+              <h6>
+                - Carrying or consuming liquor inside the bus is prohibited. Bus
+                operator reserves the right to deboard drunk passengers.
+              </h6>
+            </div>
+            <div if:true={pickupTime} class="pickupTime">
+              <h6>
+                - Bus operator is not obligated to wait beyond the scheduled departure
+                time of the bus. No refund request will be entertained for late
+                arriving passengers.
+              </h6>
+            </div>
+          </div>
+          <div if:true={amenities} class="amenities margin-top-bottom">
+            <h4>Bus Amenities</h4>
+            <div class="features">
+              <div class="top">
+                <h6>LED T.V.</h6>
+                <h6>Water Bottle</h6>
+                <h6>CCTV</h6>
+              </div>
+              <div class="bottom">
+                <h6>Charging Point</h6>
+                <h6>Reading Light</h6>
+                <h6>E-Ticket</h6>
+              </div>
+            </div>
+          </div>
+          <div if:true={reviews} class="reviews margin-top-bottom">
+            <h4>Reviews</h4>
+
+            <div class="reviewsWrapper">
+              <template for:each={passengerReviews} for:item='review'>
+                <div key={review.Id} class="passengerReviewWrapper">
+                  <div class="passengerName">
+                    <h5>{review.Passenger_Name__r.Name}</h5>
+                  </div>
+                  <div class="reviewDetails">
+                    <h6 style="width: 70%;">{review.Feedback__c}</h6>
+                    <h6 style="width: 15%; text-align: end;">{review.Overall_Rating__c} <lightning-icon class="iconPad" icon-name="utility:favorite" size="small"></lightning-icon></h6>
+                </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div if:true={displayLocations} class="padding">
+        <div class="journeyInfoWrapper">
+          <div class="locationWrapper margin4">
+  
+            <h5 class="pointTitle">PickUp Points</h5>
+            <template for:each={pickupPoints} for:item="pickup">
+              <div key={pickup.Id} class="pickup">
+                <div class="pickupPoint">
+                  <div class="point">
+                      <button class="pointButton" value={pickup.Id} onclick={handleSelectPickupPoint}>
+                        {pickup.Station__r.Name}, {pickup.Station__r.Address__c}
+                      </button>
+                  </div>
+                </div>
+              </div>
+            </template>
+  
+            <h5 class="pointTitle">Drop Points</h5>
+            <template for:each={dropPoints} for:item="drop">
+              <div key={drop.Id} class="pickup">
+                <div class="pickupPoint">
+                  <div class="point">
+                    <button class="pointButton" value={drop.Id} onclick={handleSelectDropPoint}>
+                    {drop.Station__r.Name}, {drop.Station__r.Address__c}</button>
+                  </div>
+                </div>
+              </div>
+            </template>
+            
+            <div class="selectedPoints">
+              <h5 class="point-h5">Selected Points</h5>
+              <div class="selectedPointsWrapper">
+                <div class="pointContainer">
+                  <h4>Pickup Point</h4>
+  
+                  <h5>{pickupPointAddress}</h5>
+                  <h6>{pickupPointCity}</h6>
+  
+                </div>
+                <div class="pointContainer">
+                  <h4>Drop Point</h4>
+  
+                  <h5>{dropPointAddress}</h5>
+                  <h6>{dropPointCity}</h6>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          <div class="seatWrapper">
+            <div class="wrapper">
+              <div class="legend">
+                <h5 class="pointTitle2">Select Seats</h5>
+                <div class="bookedLegend">Booked</div>
+                <div class="availableLegend">Available</div>
+                <div class="selectedLegend">Selected</div>
+              </div>
+      
+              <div class="seats">
+                <h5 class="seatTitle1">Sitting Berth</h5>
+                <div class="sittingSeatsWrapper">
+                  <div class="right sittingSeats">
+                    <div class="rightOne">
+                      <template for:each={rowOne} for:item = 'seat'>
+                        <div key={seat.Id}>
+                          <button onclick={handleClickSeat} value={seat.Id} style={seat.Seat_Bg_Color__c} class="commonSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                        </div>
+                      </template>
+                    </div>
+                    <div class="rightTwo">
+                      <template for:each={rowTwo} for:item = 'seat'>
+                        <div key={seat.Id}>
+                          <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                        </div>
+                      </template>
+                    </div>
+                  </div>
+                  <div class="left sittingSeats">
+                    <div class="leftOne">
+                      <template for:each={rowThree} for:item = 'seat'>
+                        <div key={seat.Id}>
+                          <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                        </div>
+                      </template>
+                    </div>
+                    <div class="leftTwo">
+                      <template for:each={rowFour} for:item = 'seat'>
+                        <div key={seat.Id}>
+                          <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                        </div>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+                
+                <h5 class="seatTitle2">Sleeper Berth</h5>
+                <div class="sittingSeatsWrapper marginTop">
+                  <div class="right sleeperSeats">
+                    <div class="rightOne">
+                      <template for:each={sleeperRow1} for:item = 'seat'>
+                        <div key={seat.Id}>
+                          <button onclick={handleClickSeat} value={seat.Id} style={seat.Seat_Bg_Color__c} class="commonSleeperSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                        </div>
+                      </template>
+                    </div>
+                    <div class="rightTwo">
+                      <template for:each={sleeperRow2} for:item = 'seat'>
+                        <div key={seat.Id}>
+                          <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSleeperSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                        </div>
+                      </template>
+                    </div>
+                  </div>          
+      
+                  <div class="left sleeperSeats">
+                    <div class="leftOne">
+                      <template for:each={sleeperRow3} for:item = 'seat'>
+                        <div key={seat.Id}>
+                          <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSleeperSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                        </div>
+                      </template>
+                    </div>
+                    <div class="leftTwo">
+                      <template for:each={sleeperRow4} for:item = 'seat'>
+                        <div key={seat.Id}>
+                          <button onclick={handleClickSeat} value={seat.Id}  style={seat.Seat_Bg_Color__c} class="commonSleeperSeatClass" disabled={seat.Is_Disabled__c}>{seat.Seat__r.Seat_Number__c}</button>
+                        </div>
+                      </template>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="selectedSeats">
+                <div>
+                  <h5 class="seatName-h5">Seats Selected</h5>
+                  <div class="flexContainer">
+                    <template for:each={showSelectedSeatsName} for:item="seat">
+                      <div key={seat.Id}>
+                        <h6 class="seatName-h6">{seat.Seat__r.Name}</h6>
+                      </div>
+                    </template>
+                  </div>
+              </div>
+                <div class="totalFare">
+                  <h5>₹{totalFare}</h5>
+                  <h6>Fare Details</h6>
+                </div>
+              </div>
+              <div class="bookSeatsWrapper">
+                <button onclick={handleBookSeat} disabled={isBookingDisabled}>
+                  BOOK SEATS
+                </button>
+              </div>
+          </div>
+          </div>
+          <div if:true={bookingClosed}>
+            <button class="bookingClosed" disabled>BOOKING CLOSED</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</template>

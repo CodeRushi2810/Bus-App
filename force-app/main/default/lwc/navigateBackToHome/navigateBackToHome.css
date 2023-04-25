@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.buttonWrapper{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonWrapper button{
+    padding: 1em;
+    width: 40%;
+    color: white;
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    border-radius: 5px;
+    border: none;
+}

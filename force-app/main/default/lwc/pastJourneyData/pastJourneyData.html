@@ -1,0 +1,63 @@
+<!-- sldsValidatorIgnore -->
+<!-- sldsValidatorIgnore -->
+<!-- <template>
+    <div class="cityWrapper2">
+        <h4>{record.Source_City__c}</h4>
+        <div class="dots">o----------</div>
+        <h4>{record.Destination_City__c}</h4>
+    </div>
+    <div class="header">
+        <div class="left">
+            <h5>{record.Bus_Id__r.Name}</h5>
+        </div>
+        <div class="right">
+            <h5>₹ {record.Total_Fare__c}</h5>
+        </div>
+    </div>
+    <div class="dates">
+        <h5>Journey Date - {record.Journey_Date__c}</h5>
+        <h5>Booking Date - {record.Booking_Date__c}</h5>
+        <h5>Start Time - {record.Start_Time__c}</h5>
+        <h5>End Time - {record.End_Time__c}</h5>
+    </div>
+    <div class="feedback">
+        <button value={record.Id} onclick={handleRateJourney}>Rate Journey</button>
+    </div>
+</template> -->
+
+
+<template>
+    <div class="container">
+        <div class="busDetails">
+            <div>
+                <h4>{record.Bus_Id__r.Name}</h4>
+                <h5>Volvo</h5>
+            </div>
+            <div class="ratings">
+                <h5>4.4/5</h5>
+            </div>
+        </div>
+        <div class="header">
+            <h4>{record.Source_City__c}</h4>
+            <h5>TO</h5>
+            <h4>{record.Destination_City__c}</h4>
+        </div>
+        <div class="boxWrapper">
+            <div class="box">
+                <h4>Journey Date</h4>
+                <h5>{record.Journey_Date__c}</h5>
+            </div>
+            <div class="box">
+                <h4>Total Fare</h4>
+                <h5>{record.Total_Fare__c} /-</h5>
+            </div>
+            <div class="box">
+                <h4>Booking Date</h4>
+                <h5>{record.Booking_Date__c}</h5>
+            </div>
+        </div>
+        <div class="rateJourneyButtonWrapper">
+            <button class="rateJourneyButton" value={record.Id} onclick={handleRateJourney}>Rate Journey</button>
+        </div>
+    </div>
+</template>
