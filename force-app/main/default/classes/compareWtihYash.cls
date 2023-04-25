@@ -1,0 +1,77 @@
+/*	@Class Name 	: 	CustomSelfRegisterClass
+*	@Description 	:	Custom Registration Controller for Bus Ticket App for Guest User
+*	@Created Date 	:	
+*	@Author Name 	:	Rushi Patel (Horizontal Digital)
+*/
+
+global class compareWtihYash {
+	@AuraEnabled(cacheable = false)
+    global static string createAccount(String firstName, String lastName , String email){
+    	Savepoint rollbackStartPoint = Database.setSavepoint();       
+        try{            
+            System.debug('firstName : '+firstName);System.debug('lastName : '+lastName);System.debug('email : '+email);
+            String contactId =	getUserAccountContactId( firstName ,  lastName,  email);
+            System.debug('Contact Id : '+contactId);
+            List<User> checkForExistingUser = [SELECT Id FROM User WHERE Email =:email LIMIT 1];
+            if(checkForExistingUser.isEmpty()){
+                System.debug('No Existing User Found Block');
+                Profile profile = [SELECT Id, Name FROM Profile WHERE Name = 'Demo Comm Profile'];                
+                Id profileId = profile.Id;
+                System.debug('Profile Id : '+profileId);
+                String response = createCommunityUser(firstName , lastName , email , contactId, profileId);
+                System.debug('Response : '+response);
+                if(response == 'Registeration Failed'){
+                    Database.rollback(rollbackStartPoint);
+                	System.debug('ROLLBACK CALLED>>');
+                }
+                return response;
+            }else{
+                Database.rollback(rollbackStartPoint);
+                System.debug('ROLLBACK CALLED>>');
+                system.debug('Email already exists!!!');
+                return 'Email already exists!!!';
+            }
+        }
+         catch(Exception ex){
+			Database.rollback(rollbackStartPoint);
+            System.debug('ROLLBACK CALLED>> ');
+            system.debug('Error occured while Registration!!!');
+            return 'Error occured while Registration!!!';
+		}            
+    }
+    /*Method Name : 	getUserAccountContactId
+     * Discription :	Method to get the Contact Id of the Created User Account 
+     * Returns	   :	userAccountContactId
+     */
+    private static String getUserAccountContactId(String firstName , String lastName, String email){
+        Id personAccountRecordTypeId =  [SELECT Id FROM RecordType WHERE SobjectType ='Account' AND IsActive =True AND DeveloperName ='PersonAccount' LIMIT 1].Id;
+		System.debug('personAccountRecordTypeId : '+personAccountRecordTypeId);
+		Account userAccount = new Account(FirstName = firstName,
+                                          LastName = lastName,
+                                          RecordTypeId = personAccountRecordTypeId);
+        insert userAccount;
+        System.debug('AccountId'+userAccount.Id);
+        Id userAccountContactId =[SELECT PersonContactId  FROM Account WHERE Id =:userAccount.Id LIMIT 1].PersonContactId;
+		return userAccountContactId;
+    }
+    
+     /*Method Name : 	createCommunityUser
+     * Discription :	Method to create Community User
+     * Returns	   :	Success Message / Error Message
+     */
+    private static String createCommunityUser(String firstName , String lastName , String emailId ,  String contactId, String profileId){
+        try{
+            User communityUser = new User(FirstName = firstName, LastName = lastName,
+                                          Email = emailId,ContactId = contactId,ProfileId = profileId,
+                                          UserName = emailId,Alias = firstName,CommunityNickName = 'ExternalUser'+Datetime.now().getTime(),
+                                          TimeZoneSidKey = 'America/New_York',LocaleSidKey =  UserInfo.getLocale(),
+                                          EmailEncodingKey = 'UTF-8',LanguageLocaleKey = UserInfo.getLocale());
+            insert communityUser;
+            system.debug('Registered Successfully! User Id is: '+communityUser.Id);
+            return 'Registered Successfully';
+        }
+        catch(Exception ex){
+            return 'Registeration Failed';
+        }
+    }
+}
