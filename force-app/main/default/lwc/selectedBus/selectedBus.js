@@ -322,7 +322,13 @@ export default class SelectedBus extends NavigationMixin(LightningElement) {
         });
         this.dispatchEvent(event);
     }
-    // Test
+    handleSelectPoints() {
+        const event = new ShowToastEvent({
+            message: 'Please select Points',
+            variant: 'danger',
+        });
+        this.dispatchEvent(event);
+    }
 
     policyButton = 'dropdownButtonsInActive';
     amenityButton = 'dropdownButtonsInActive';
@@ -555,10 +561,12 @@ export default class SelectedBus extends NavigationMixin(LightningElement) {
     @track dropPointAddress = [];
     @track dropPointCity = [];
 
-    @track arePointsSelected = false;
+    @track isPickupPointSelected = false;
+    @track isDropPointSelected = false;
     
     handleSelectPickupPoint(event){
 
+        this.isPickupPointSelected = true;
         this.pickupPoint = event.target.value;
         console.log(this.pickupPoint);
         SelectPickupPointController({pickupPointId : this.pickupPoint})
@@ -578,6 +586,8 @@ export default class SelectedBus extends NavigationMixin(LightningElement) {
         }
     }
     handleSelectDropPoint(event){
+
+        this.isDropPointSelected = true;
         this.dropPoint = event.target.value;
         console.log(this.dropPoint);
         SelectDropPointController({dropPointId : this.dropPoint})
@@ -648,21 +658,26 @@ export default class SelectedBus extends NavigationMixin(LightningElement) {
 
     handleBookSeat(){
 
-        CheckSeatStatus({seatIds : this.selectedSeats})
-        .then(response => {
-            console.log(response);
-            if(response === 'Selected seat is already booked'){
-                this.handleAlreadyBooked();
-            }else if(response === 'Booking can be done'){
-                
-                localStorage.setItem('selectedSeats', JSON.stringify(this.selectedSeats));
-                this[NavigationMixin.Navigate]({
-                type: 'comm__namedPage',
-                attributes: {
-                    name: 'Bus_Information__c'
-                }
-                })
-            } 
-        })
+        if(this.isPickupPointSelected === true && this.isDropPointSelected === true){
+            
+            CheckSeatStatus({seatIds : this.selectedSeats})
+            .then(response => {
+                console.log(response);
+                if(response === 'Selected seat is already booked'){
+                    this.handleAlreadyBooked();
+                }else if(response === 'Booking can be done'){
+                    
+                    localStorage.setItem('selectedSeats', JSON.stringify(this.selectedSeats));
+                    this[NavigationMixin.Navigate]({
+                    type: 'comm__namedPage',
+                    attributes: {
+                        name: 'Bus_Information__c'
+                    }
+                    })
+                } 
+            })
+        }else{
+            this.handleSelectPoints();
+        }
     }
 }
