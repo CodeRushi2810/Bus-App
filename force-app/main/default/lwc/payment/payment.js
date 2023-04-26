@@ -592,7 +592,7 @@ export default class Payment extends NavigationMixin(LightningElement) {
 
     handleSendOTP(){
 
-        this.handleOTPSent();
+        // this.handleOTPSent();
          // ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
          this.selectedStep = 'Step3';
          this.isOTPSent = true;
@@ -738,6 +738,7 @@ export default class Payment extends NavigationMixin(LightningElement) {
                                     this.handleTicketInvoiceMailFailed();
                                     console.log(error);
                                 })
+
                                 this[NavigationMixin.Navigate]({
                                     type: 'comm__namedPage',
                                     attributes: {
